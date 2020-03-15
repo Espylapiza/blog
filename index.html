@@ -145,7 +145,7 @@
     <div class="article-entry" itemprop="articleBody">
       
         <p>最近遇到了boot时各种问题，所以记录一下手动修复boot的过程</p>
-<h2 id="grub-rescue-mode"><a href="#grub-rescue-mode" class="headerlink" title="grub-rescue mode"></a>grub-rescue mode</h2><p>输入<code>TAB</code>可以看到支持的命令</p>
+<h2 id="grub-rescue-mode"><a href="#grub-rescue-mode" class="headerlink" title="grub rescue mode"></a>grub rescue mode</h2><p>输入<code>TAB</code>可以看到支持的命令</p>
 <p>如果grub没坏的话就是<code>root</code>和<code>prefix</code>设置错误，否则需要 USB 修复了</p>
 <p><code>root</code>和<code>prefix</code>的设置如下：</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">ls</span><br><span class="line"><span class="built_in">set</span> root=(hd0,???)</span><br><span class="line"><span class="built_in">set</span> prefix=(hd0,???)/grub</span><br><span class="line">insmod normal</span><br><span class="line">normal</span><br></pre></td></tr></table></figure>
