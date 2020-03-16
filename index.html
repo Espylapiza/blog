@@ -150,8 +150,9 @@
 <p><code>root</code>和<code>prefix</code>的设置如下：</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">ls</span><br><span class="line"><span class="built_in">set</span> root=(hd0,???)</span><br><span class="line"><span class="built_in">set</span> prefix=(hd0,???)/grub</span><br><span class="line">insmod normal</span><br><span class="line">normal</span><br></pre></td></tr></table></figure>
 
+<p>注意<code>root</code>对应<code>/boot</code>，<code>prefix</code>对应<code>/boot/prefix</code>，根据情况设置</p>
 <h2 id="USB-修复"><a href="#USB-修复" class="headerlink" title="USB 修复"></a>USB 修复</h2><p>如果开机根本没有进入grub，那就需要USB了</p>
-<p>最简单的可以使用<code>boot-repair</code>，但是这样会删掉grub的配置，所以说一下怎么手动修复grub吧</p>
+<p>最简单的方法是使用<code>boot-repair</code>，但是这样会删掉grub的配置，所以说一下怎么手动修复grub吧</p>
 <p>首先，USB启动之后把一些基本的分区<code>mount</code>上</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">sudo fdisk -l</span><br><span class="line">sudo mount /dev/sdaX /mnt <span class="comment"># replace X with partition you need</span></span><br><span class="line">sudo mount /dev/sdaX /mnt/boot</span><br><span class="line">sudo mount /dev/sdaX /mnt/boot/efi</span><br></pre></td></tr></table></figure>
 
